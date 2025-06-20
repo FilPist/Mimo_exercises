@@ -1,0 +1,56 @@
+# Author: Filippo Pistaffa
+# Date: 2025-06-20
+# A simple ToDo list in Python
+# I'm still a beginner, tho I hope you like it!
+
+todo_list = []
+
+print("Welcome to your ToDo list! These are your options:")
+print("1) Add Task")
+print("2) Remove Task")
+print("3) Show how many tasks you have")
+print("4) Quit")
+print("Type 'help' for options, 'sort' to sort tasks, or 'clear' to clear the list.")
+  
+
+while True:
+
+  if not todo_list:
+    print("Your ToDo list is empty")
+  else:
+    index = 1
+    for task in todo_list:
+      print(f"{index}. {task}")
+      index +=1
+
+  choice = input()
+  if choice == "1":
+    new_task = input("Enter the task: ")
+    todo_list.append(new_task)
+    print (f"Task {new_task} added")
+  elif choice == "2":
+    if not todo_list:
+      print ("It's empty")
+    else:
+      print(f"Removing task: {todo_list[-1]}")
+      todo_list.pop()
+  elif choice == "3":
+    print(f"You have {len(todo_list)} tasks")
+  elif choice == "4":
+    print("Quitting")
+    break
+  elif choice.lower() == "help":
+    print("These are your options:")
+    print("1) Add Task")
+    print("2) Remove Task")
+    print("3) Show how many tasks you have")
+    print("4) Quit")
+    print("Type 'help' for options, 'sort' to sort tasks, or 'clear' to clear the list.")
+  elif choice.lower() == "sort":
+    todo_list.sort()
+    print("Tasks sorted alphabetically")
+  elif choice.lower() == "clear":
+    todo_list.clear()
+    print("ToDo list cleared")
+  else:
+    print("Invalid choice, please try again")
