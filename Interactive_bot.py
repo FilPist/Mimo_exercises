@@ -1,3 +1,9 @@
+# Author: Filippo
+# Date: 2025-06-20
+# This is a simple interactive bot that asks the user for their name, age, and favorite color,
+# and responds based on the input provided.
+
+
 print ("Hi, This is a little interactive bot I created.")
 
 name = input("What is your name? ").lower()
